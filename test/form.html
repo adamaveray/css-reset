@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,shrink-to-fit=no" />
+    <title>Form Elements</title>
+    <link rel="stylesheet" href="../dist/reset.css" />
+  </head>
+  <body>
+    <main>
+      <h1>Form Elements</h1>
+
+      <form>
+        <h2>Text Inputs</h2>
+
+        <div>
+          <label for="text-input">Text Input</label>
+          <input type="text" id="text-input" placeholder="Enter text" />
+        </div>
+
+        <div>
+          <label for="email-input">Email Input</label>
+          <input type="email" id="email-input" placeholder="email@example.com" />
+        </div>
+
+        <div>
+          <label for="password-input">Password Input</label>
+          <input type="password" id="password-input" placeholder="Enter password" />
+        </div>
+
+        <div>
+          <label for="url-input">URL Input</label>
+          <input type="url" id="url-input" placeholder="https://example.com" />
+        </div>
+
+        <div>
+          <label for="tel-input">Tel Input</label>
+          <input type="tel" id="tel-input" placeholder="+61 400 000 000" />
+        </div>
+
+        <div>
+          <label for="search-input">Search Input</label>
+          <input type="search" id="search-input" placeholder="Search..." />
+        </div>
+
+        <h2>Number Input</h2>
+        <div>
+          <label for="number-input">Number Input (no spinners)</label>
+          <input type="number" id="number-input" placeholder="123" />
+        </div>
+
+        <h2>Date and Time Inputs</h2>
+
+        <div>
+          <label for="date-input">Date Input</label>
+          <input type="date" id="date-input" />
+        </div>
+
+        <div>
+          <label for="datetime-local-input">Datetime-local Input</label>
+          <input type="datetime-local" id="datetime-local-input" />
+        </div>
+
+        <div>
+          <label for="time-input">Time Input</label>
+          <input type="time" id="time-input" />
+        </div>
+
+        <div>
+          <label for="month-input">Month Input</label>
+          <input type="month" id="month-input" />
+        </div>
+
+        <div>
+          <label for="week-input">Week Input</label>
+          <input type="week" id="week-input" />
+        </div>
+
+        <h2>Other Input Types</h2>
+
+        <div>
+          <label for="color-input">Colour Input</label>
+          <input type="color" id="color-input" />
+        </div>
+
+        <div>
+          <label for="file-input">File Input</label>
+          <input type="file" id="file-input" />
+        </div>
+
+        <div>
+          <label for="range-input">Range Input</label>
+          <input type="range" id="range-input" min="0" max="100" />
+        </div>
+
+        <h2>Checkboxes and Radio Buttons</h2>
+
+        <fieldset>
+          <legend>Checkboxes</legend>
+          <div>
+            <input type="checkbox" id="checkbox-1" />
+            <label for="checkbox-1">Option 1</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="checkbox-2" />
+            <label for="checkbox-2">Option 2</label>
+          </div>
+
+          <div>
+            <input type="checkbox" id="checkbox-3" />
+            <label for="checkbox-3">Option 3</label>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Radio Buttons</legend>
+          <div>
+            <input type="radio" name="radio-group" id="radio-1" value="1" />
+            <label for="radio-1">Option 1</label>
+          </div>
+
+          <div>
+            <input type="radio" name="radio-group" id="radio-2" value="2" />
+            <label for="radio-2">Option 2</label>
+          </div>
+
+          <div>
+            <input type="radio" name="radio-group" id="radio-3" value="3" />
+            <label for="radio-3">Option 3</label>
+          </div>
+        </fieldset>
+
+        <h2>Textarea</h2>
+        <div>
+          <label for="textarea">Textarea (auto-growing)</label>
+          <textarea id="textarea" placeholder="Enter multiple lines of text..."></textarea>
+        </div>
+
+        <h2>Select</h2>
+        <div>
+          <label for="select">Select Dropdown</label>
+          <select id="select">
+            <option value="" selected disabled>Choose an option</option>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+          </select>
+        </div>
+
+        <div>
+          <label for="select-multiple">Select Multiple</label>
+          <select id="select-multiple" multiple>
+            <option value="1">Option 1</option>
+            <option value="2">Option 2</option>
+            <option value="3">Option 3</option>
+            <option value="4">Option 4</option>
+          </select>
+        </div>
+
+        <h2>Buttons</h2>
+        <button type="button">Button Element</button>
+        <input type="button" value="Input Button" />
+        <input type="submit" value="Submit Button" />
+        <input type="reset" value="Reset Button" />
+
+        <h2>Fieldset with Legend</h2>
+        <fieldset>
+          <legend>Personal Information</legend>
+
+          <div>
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" />
+          </div>
+
+          <div>
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" />
+          </div>
+        </fieldset>
+
+        <h2>Required Fields and Validation</h2>
+        <div>
+          <label for="required-input">Required Input</label>
+          <input type="email" id="required-input" required placeholder="required@example.com" />
+        </div>
+
+        <div>
+          <label for="pattern-input">Pattern Input (numbers only)</label>
+          <input type="text" id="pattern-input" pattern="[0-9]+" placeholder="123456" />
+        </div>
+
+        <h2>Disabled and Readonly States</h2>
+        <div>
+          <label for="disabled-input">Disabled Input</label>
+          <input type="text" id="disabled-input" disabled value="This is disabled" />
+        </div>
+
+        <div>
+          <label for="readonly-input">Readonly Input</label>
+          <input type="text" id="readonly-input" readonly value="This is readonly" />
+        </div>
+
+        <button type="button" disabled>Disabled Button</button>
+      </form>
+    </main>
+  </body>
+</html>

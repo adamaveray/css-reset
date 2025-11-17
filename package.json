@@ -1,0 +1,36 @@
+{
+  "name": "@averay/css-reset",
+  "type": "module",
+  "browserslist": [
+    "baseline widely available"
+  ],
+  "exports": {
+    ".": "./src/reset.scss",
+    "./*": "./src/*.scss"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "src"
+  ],
+  "scripts": {
+    "build": "bun --bun x sass src/reset.scss | bun --bun x postcss --output=dist/reset.css",
+    "format": "bun x codeformat fix",
+    "lint": "bun x codeformat check",
+    "prepare": "bun x husky",
+    "prepack": "bun run build",
+    "release": "bun run lint && bun --bun x bumpp && bun publish"
+  },
+  "devDependencies": {
+    "@averay/codeformat": "^0.2.21",
+    "@types/bun": "latest",
+    "autoprefixer": "^10.4.22",
+    "bumpp": "^10.3.1",
+    "cssnano": "^7.1.2",
+    "husky": "^9.1.7",
+    "postcss-cli": "^11.0.1",
+    "postcss-merge-at-rules": "^1.2.0",
+    "postcss-scss": "^4.0.9",
+    "sass": "^1.94.0"
+  }
+}

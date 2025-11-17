@@ -1,0 +1,110 @@
+/* stylelint-disable property-no-vendor-prefix -- Need to preserve browser-specific reset properties. */
+// Based off norm.css (https://github.com/u1ui/norm.css/blob/main/norm.css) © 2022 u1ui MIT
+@layer reset {
+  html {
+    /* Chrome rounds computed line-height:
+    16px (font-size) * 1.15 (line-height) = 18.4px (line-height);
+    But chrome uses 18px. So use a number that gives full pixels. (1.124 or 1.1875) */
+    line-height: 1.1875;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+  }
+
+  h1 {
+    margin-block: 0.67em;
+    font-size: 2em; // Correct the font size and margin on `h1` elements within `section` and `article` contexts in Chrome, Firefox, and Safari.
+  }
+
+  :is(dl, ol, ul) :is(dl, ol, ul) {
+    margin: 0; // Remove the margin on nested lists in Chrome and Safari.
+  }
+
+  hr {
+    color: inherit; // Correct the inheritance of border color in Firefox.
+  }
+
+  abbr[title] {
+    -webkit-text-decoration: underline dotted; // safari (does not support unprefixed shorthand)
+    text-decoration-thickness: 0.08em; // safari, chrome to match firefox
+    text-underline-offset: 0.1em; // safari, chrome to match firefox
+  }
+
+  b,
+  strong {
+    font-weight: bolder; // Add the correct font weight in Chrome and Safari.
+  }
+
+  small {
+    font-size: 80%; // Add the correct font size in all browsers.
+  }
+
+  table {
+    border-color: currentcolor; // Correct table border color in Chrome and Safari.
+    // text-indent: 0; will enable it if someone has a need for it
+  }
+
+  textarea,
+  button,
+  input,
+  select {
+    // textarea: Firefox, all:Safari
+    margin: 0;
+  }
+
+  textarea {
+    // behave like in firefox
+    baseline-source: first; // available in chrome 111, safari no
+  }
+
+  button,
+  input:is([type='button'], [type='submit'], [type='reset']) {
+    -webkit-appearance: button; // Correct the inability to style buttons in iOS and Safari.
+  }
+
+  [type='search'] {
+    -webkit-appearance: textfield; // Correct the odd appearance in Chrome and Safari.
+    /* outline-offset: -2px; */ // Correct the outline style in Safari. Get worse in chrome...
+  }
+
+  ::-webkit-search-decoration {
+    -webkit-appearance: none; // Remove the inner padding in Chrome and Safari on macOS.
+  }
+
+  ::placeholder {
+    // Correct the text style of placeholders in Chrome and Safari.
+    opacity: 0.54;
+    color: inherit;
+  }
+
+  ::-webkit-file-upload-button {
+    -webkit-appearance: button; // Correct the inability to style upload buttons in iOS and Safari.
+    font: inherit; // Change font properties to `inherit` in Safari.
+  }
+
+  :-moz-ui-invalid {
+    // Remove the additional :invalid styles in Firefox.
+    box-shadow: none;
+  }
+
+  summary {
+    // Add the correct display in safari 14
+    display: list-item;
+  }
+
+  search {
+    display: block;
+  }
+
+  [inert] {
+    // ch < 102 sf < 15.5 ff < 112
+    cursor: default;
+    pointer-events: none;
+
+    &,
+    & * {
+      // user-modify: read-only !important; no effect?
+      -webkit-user-select: none;
+      user-select: none;
+    }
+  }
+}

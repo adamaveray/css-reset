@@ -1,0 +1,182 @@
+@use 'sass:string';
+
+$_default-border-width: 1px;
+$_default-text-indent: 0.3em;
+$_text-inputs-selector: string.unquote(
+  'input:not([type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"], [type="color"], [type="file"], [type="range"])'
+);
+
+/// Applies styles to Webkit browsers only.
+///
+/// @param {'ios' | 'mac' | null} A specific platform to target, or null for any.
+@mixin _webkit-only($platform: null) {
+  @if $platform == 'ios' {
+    @supports (-webkit-touch-callout: none) {
+      @content;
+    }
+  } @else if $platform == 'mac' {
+    @supports (-webkit-hyphens: none) and (not (-webkit-touch-callout: none)) {
+      @content;
+    }
+  } @else {
+    // Either platform
+    @supports (-webkit-hyphens: none) {
+      @content;
+    }
+  }
+}
+
+/// Applies styles to Blink browsers only.
+///
+/// @param {Boolean} $webkit Whether to narrow to only Webkit first (if already targetting a Webkit-only selector then the Blink-only targetting can be made more efficient).
+@mixin _blink-only($test-webkit: true) {
+  @if $test-webkit {
+    @supports (-webkit-tap-highlight-color: initial) and (not (-webkit-hyphens: none)) {
+      @content;
+    }
+  } @else {
+    @supports not (-webkit-hyphens: none) {
+      @content;
+    }
+  }
+}
+
+@layer reset {
+  // Use document font.
+  #{$_text-inputs-selector},
+  textarea,
+  button,
+  select {
+    font: inherit;
+  }
+
+  // Size all inputs to accommodate borders.
+  input,
+  textarea,
+  select {
+    box-sizing: border-box;
+  }
+
+  #{$_text-inputs-selector},
+  textarea,
+  select {
+    border-width: $_default-border-width; // Enforce consistent border appearance at the expense of native input styles.
+    border-style: solid; // Enforce consistent border appearance at the expense of native input styles.
+    border-radius: 0; // Enforce consistent border appearance at the expense of native input styles.
+    color: inherit; // Remove blue colour on iOS.
+    font-size: 1rem; // Prevent zooming on iOS.
+    text-indent: 0.3em;
+
+    @supports (background: canvas) {
+      background: canvas; // Remove alternate iOS background colours.
+    }
+
+    @supports (border-color: -apple-system-secondary-label) {
+      border-color: -apple-system-secondary-label; // Apply border to iOS widget inputs.
+    }
+  }
+
+  #{$_text-inputs-selector},
+  textarea {
+    padding-inline: 0; // Remove internal padding.
+  }
+
+  select:not([multiple]) {
+    appearance: textfield;
+    text-indent: 0;
+
+    @include _blink-only {
+      padding-block: 0.11em;
+    }
+
+    @include _webkit-only {
+      border-radius: 0;
+    }
+
+    @include _webkit-only($platform: 'ios') {
+      text-indent: 0;
+    }
+  }
+
+  // Expand basic inputs to full-width.
+  #{$_text-inputs-selector},
+  textarea,
+  select,
+  label:not(input + label) {
+    display: block;
+    inline-size: 100%;
+  }
+
+  // Prevent form labels following outer text alignment.
+  label {
+    text-align: start;
+  }
+
+  // Use pointer cursor for buttons.
+  button,
+  input:is([type='button'], [type='submit'], [type='reset']) {
+    cursor: pointer;
+  }
+
+  // Hide number stepper arrows.
+  input[type='number'] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+      appearance: none;
+      margin: 0;
+    }
+  }
+
+  input:is([type='date'], [type='datetime-local'], [type='time'], [type='month'], [type='week']) {
+    appearance: textfield; // Fix iOS date input alternate styling.
+
+    @include _webkit-only($platform: 'ios') {
+      appearance: none; // Resolve `box-sizing: border-box` being ignored.
+      padding-block: 0; // Remove user agent vertical padding.
+    }
+  }
+
+  // Fix native date input indentation on desktop Webkit.
+  @include _webkit-only {
+    ::-webkit-datetime-edit {
+      margin-block: -0.04em; // Remove excess vertical spacing.
+      margin-inline-start: -0.065em; // Remove excess text indentation.
+      padding: 0;
+      text-indent: 0; // Remove double text indentation.
+    }
+  }
+
+  @include _blink-only($test-webkit: false) {
+    ::-webkit-datetime-edit-fields-wrapper {
+      text-indent: 0; // Remove double text indentation.
+    }
+  }
+
+  // Fix native date input on mobile Webkit.
+  ::-webkit-date-and-time-value {
+    display: block;
+    position: relative;
+    min-block-size: calc(1.575em + ($_default-border-width * 2)); // Add missing border height.
+    padding-block-start: 0.2em; // Fix vertical alignment.
+    text-align: inherit; // Disable text centring
+    text-overflow: ellipsis;
+
+    // Prevent text wrapping to match regular input behaviour.
+    white-space: nowrap;
+  }
+
+  // Remove default fieldset styles.
+  fieldset {
+    margin: 0;
+    padding: 0;
+    border: 0;
+  }
+
+  textarea {
+    min-block-size: 5lh; // Ensure sufficient minimum space.
+    padding-inline: $_default-text-indent;
+    text-indent: 0;
+    resize: block; // Allow only vertical resizing of textareas.
+    field-sizing: content; // Automatically grow to fit content.
+  }
+}

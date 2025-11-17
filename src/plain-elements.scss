@@ -1,0 +1,23 @@
+/// Helpers to remove default styles from common elements
+
+%plain-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+%plain-details-summary {
+  // Hide default disclosure indicator
+  &::-webkit-details-marker {
+    display: none;
+  }
+  &::marker {
+    content: '';
+  }
+}
+
+%plain-details {
+  > summary {
+    @extend %plain-details-summary;
+  }
+}

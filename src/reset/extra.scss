@@ -1,0 +1,148 @@
+// (Some components based off HTML5 Boilerplate (https://html5boilerplate.com/) © HTML5 Boilerplate MIT)
+@layer reset {
+  // Set better defaults.
+  * {
+    &,
+    &::before,
+    &::after {
+      background-repeat: no-repeat;
+      mask-repeat: no-repeat;
+    }
+  }
+
+  html {
+    // Set base typographic metrics.
+    font-size: 1em;
+    line-height: 1.4;
+
+    // Allow animating auto dimensions in supported browsers.
+    interpolate-size: allow-keywords;
+
+    // Prevent long lines breaking layout.
+    overflow-wrap: anywhere;
+
+    // Smooth scroll anchor links.
+    scroll-behavior: smooth;
+  }
+
+  body {
+    // Ensure body fills viewport.
+    box-sizing: border-box;
+    min-block-size: 100vb;
+    min-block-size: 100svb;
+  }
+
+  // Remove default margins.
+  html,
+  body,
+  figure {
+    margin: 0;
+  }
+
+  // Convert common inline elements to block.
+  audio,
+  canvas,
+  embed,
+  iframe,
+  img,
+  object,
+  picture,
+  svg,
+  video {
+    display: block;
+  }
+
+  // Remove text selection shadow & ensure visibility.
+  ::selection {
+    background: #b3d4fc;
+    text-shadow: none;
+  }
+
+  // Improve horizontal rule appearance.
+  hr {
+    display: block;
+    block-size: 1px;
+    margin-block: 1lh;
+    padding: 0;
+    border: 0;
+    border-block-start: 1px solid currentcolor;
+  }
+
+  // Improve wrapping of short text.
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  button,
+  input:is([type='button'], [type='submit'], [type='reset']) {
+    text-wrap: balance;
+  }
+
+  // Remove default italics.
+  h3,
+  address {
+    font-style: normal;
+  }
+
+  // Remove obtrusive default dialog styles.
+  dialog {
+    border: none;
+
+    // Ensure not shown when not open.
+    &:not([open], :modal) {
+      display: none !important;
+    }
+
+    // Set better default modal sizing & layout.
+    &:modal {
+      box-sizing: border-box;
+      block-size: auto;
+      max-block-size: 100%;
+      inline-size: auto;
+      max-inline-size: 100%;
+      overflow-block: auto;
+      overscroll-behavior-block: contain;
+    }
+
+    // Prevent document scrolling while dialog open.
+    body:has(&:open, &[open]) {
+      overflow: hidden;
+    }
+  }
+
+  // Remove default borders.
+  iframe {
+    border: none;
+  }
+
+  // Match default margins to line height.
+  p {
+    margin-block: 1lh;
+  }
+
+  // Contain figcaptions to figure sizes.
+  figure:has(figcaption) {
+    inline-size: fit-content;
+    margin-inline: auto;
+
+    @at-root figure > figcaption {
+      contain: inline-size;
+    }
+  }
+
+  // Wrap preformatted text.
+  pre {
+    white-space: pre-wrap;
+  }
+
+  // Reduce list indentation.
+  :where(ul, ol) {
+    padding-inline-start: 1em;
+  }
+
+  // Remove blockquote margins.
+  blockquote {
+    margin-inline: 0;
+  }
+}
