@@ -1,6 +1,7 @@
 {
   "name": "@averay/css-reset",
   "type": "module",
+  "version": "0.0.1",
   "browserslist": [
     "baseline widely available"
   ],
