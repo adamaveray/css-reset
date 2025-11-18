@@ -173,10 +173,13 @@ $_text-inputs-selector: string.unquote(
   }
 
   textarea {
-    min-block-size: 5lh; // Ensure sufficient minimum space.
     padding-inline: $_default-text-indent;
     text-indent: 0;
     resize: block; // Allow only vertical resizing of textareas.
-    field-sizing: content; // Automatically grow to fit content.
+
+    &:not([rows]) {
+      min-block-size: 5lh; // Ensure sufficient minimum space.
+      field-sizing: content; // Automatically grow to fit content.
+    }
   }
 }
