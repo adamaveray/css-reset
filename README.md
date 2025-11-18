@@ -9,6 +9,7 @@ A somewhat-opinionated SCSS-based CSS reset & normalisation.
 ### Forms
 
 - Set `dir="auto"` on `<input>` and `<textarea>` elements to natively support both left-to-right and right-to-left languages ([see more](https://mough.xyz/312/psa-add-dirauto-to-your-inputs-and-textareas/)).
+- Set `aria-invalid="true"` on invalid inputs and style with `[aria-invalid="true"]` rather than relying on `:invalid` to control when invalid styles are applied.
 
 ## Known Issues
 
