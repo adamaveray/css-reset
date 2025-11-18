@@ -1,7 +1,7 @@
 /* stylelint-disable property-no-vendor-prefix -- Need to preserve browser-specific reset properties. */
 // Based off norm.css (https://github.com/u1ui/norm.css/blob/main/norm.css) © 2022 u1ui MIT
 @layer reset {
-  html {
+  :root {
     /* Chrome rounds computed line-height:
     16px (font-size) * 1.15 (line-height) = 18.4px (line-height);
     But chrome uses 18px. So use a number that gives full pixels. (1.124 or 1.1875) */

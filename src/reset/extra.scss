@@ -10,7 +10,7 @@
     }
   }
 
-  html {
+  :root {
     // Set base typographic metrics.
     font-size: 1em;
     line-height: 1.4;
@@ -33,7 +33,7 @@
   }
 
   // Remove default margins.
-  html,
+  :root,
   body,
   figure {
     margin: 0;
