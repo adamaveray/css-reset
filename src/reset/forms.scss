@@ -67,8 +67,8 @@ $_text-inputs-selector: string.unquote(
     font-size: 1rem; // Prevent zooming on iOS.
     text-indent: 0.3em;
 
-    @supports (background: canvas) {
-      background: canvas; // Remove alternate iOS background colours.
+    @supports (background: Field) {
+      background: Field; // Remove alternate iOS background colours.
     }
 
     @supports (border-color: -apple-system-secondary-label) {
