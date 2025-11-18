@@ -79,6 +79,17 @@ $_text-inputs-selector: string.unquote(
   #{$_text-inputs-selector},
   textarea {
     padding-inline: 0; // Remove internal padding.
+
+    &:dir(rtl),
+    :dir(rtl) > &[dir='auto'] {
+      &:placeholder-shown {
+        direction: rtl; // Correctly align placeholder text in RTL contexts.
+      }
+    }
+
+    :is([type='tel'], [type='url'], [type='email']):not([dir], :placeholder-shown) {
+      direction: ltr; // Force LTR for specific content types.
+    }
   }
 
   select:not([multiple]) {
