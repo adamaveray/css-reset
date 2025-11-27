@@ -1,4 +1,4 @@
-# @averay/reset
+# @averay/css-reset
 
 A somewhat-opinionated SCSS-based CSS reset & normalisation.
 
