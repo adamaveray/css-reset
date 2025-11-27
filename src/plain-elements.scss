@@ -1,5 +1,9 @@
 /// Helpers to remove default styles from common elements
 
+%unset {
+  all: unset;
+}
+
 %plain-list {
   margin: 0;
   padding: 0;
