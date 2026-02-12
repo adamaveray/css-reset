@@ -40,10 +40,10 @@ $_default-text-indent: 0.3em;
 
 @layer reset {
   // Use document font.
-  #{$_text-inputs-selector},
+  input,
   textarea,
-  button,
-  select {
+  select,
+  button {
     font: inherit;
   }
 
