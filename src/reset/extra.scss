@@ -177,4 +177,16 @@
   math {
     font-variant-numeric: tabular-nums lining-nums slashed-zero;
   }
+
+  // Improve appearance of abbreviations.
+  abbr {
+    font-variant-caps: all-small-caps;
+
+    &:not([title]) {
+      text-decoration: none;
+    }
+    &[title] {
+      cursor: help;
+    }
+  }
 }
