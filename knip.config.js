@@ -1,7 +1,4 @@
 export default {
-  ignoreBinaries: [
-    'publish', // Bun action
-  ],
   ignoreDependencies: [
     // Build tools
     'bumpp',
