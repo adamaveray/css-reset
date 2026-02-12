@@ -189,4 +189,10 @@
       cursor: help;
     }
   }
+
+  // Prevent line-height issues with subscript & superscript.
+  sub,
+  sup {
+    line-height: 0;
+  }
 }
