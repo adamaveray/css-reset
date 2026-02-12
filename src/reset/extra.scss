@@ -170,4 +170,11 @@
   blockquote {
     margin-inline: 0;
   }
+
+  // Use tabular numerals in specific locations.
+  table,
+  time,
+  math {
+    font-variant-numeric: tabular-nums lining-nums slashed-zero;
+  }
 }
