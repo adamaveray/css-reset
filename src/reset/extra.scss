@@ -28,7 +28,7 @@
   body {
     // Ensure body fills viewport.
     box-sizing: border-box;
-    min-block-size: 100vb;
+    min-block-size: 100vb; // stylelint-disable-line defensive-css/require-dynamic-viewport-height -- Intentionally used as a legacy fallback.
     min-block-size: 100svb;
   }
 
@@ -61,7 +61,7 @@
   // Improve horizontal rule appearance.
   hr {
     display: block;
-    block-size: 1px;
+    block-size: 1px; // stylelint-disable-line defensive-css/no-fixed-sizes -- Intentionally non-resizing.
     margin-block: 1lh;
     padding: 0;
     border: 0;
