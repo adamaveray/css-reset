@@ -16,8 +16,8 @@
   ],
   "scripts": {
     "build": "bun --bun x sass src/reset.scss | bun --bun x postcss --output=dist/reset.css",
-    "format": "bun x codeformat fix",
-    "lint": "bun x codeformat check",
+    "format": "bun x codeformat fix && bun run build",
+    "lint": "bun x codeformat check && bun run build",
     "prepare": "bun x husky",
     "prepack": "bun run build",
     "release": "bun run lint && bun --bun x bumpp && bun publish"
