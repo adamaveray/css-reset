@@ -30,6 +30,9 @@
 
     // Smooth scroll anchor links.
     scroll-behavior: smooth;
+
+    // Prevent mobile browser text size adjustment.
+    text-size-adjust: none;
   }
 
   body {
