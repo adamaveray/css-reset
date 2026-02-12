@@ -5,8 +5,12 @@
     &,
     &::before,
     &::after {
+      // Default to no background repeating.
       background-repeat: no-repeat;
       mask-repeat: no-repeat;
+
+      // Allow discrete transitions without needing to declare in each `transition` shorthand rule.
+      transition-behavior: allow-discrete !important;
     }
   }
 
