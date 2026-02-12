@@ -19,6 +19,9 @@
     font-size: 1em;
     line-height: 1.4;
 
+    // Hang all punctuation
+    hanging-punctuation: first allow-end last;
+
     // Allow animating auto dimensions in supported browsers.
     interpolate-size: allow-keywords;
 
