@@ -1,10 +1,7 @@
-@use 'sass:string';
+@use './vars' as *;
 
 $_default-border-width: 1px;
 $_default-text-indent: 0.3em;
-$_text-inputs-selector: string.unquote(
-  'input:not([type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"], [type="color"], [type="file"], [type="range"])'
-);
 
 /// Applies styles to Webkit browsers only.
 ///
@@ -57,7 +54,7 @@ $_text-inputs-selector: string.unquote(
     box-sizing: border-box;
   }
 
-  #{$_text-inputs-selector},
+  #{$text-inputs-selector},
   textarea,
   select {
     border-width: $_default-border-width; // Enforce consistent border appearance at the expense of native input styles.
@@ -76,7 +73,7 @@ $_text-inputs-selector: string.unquote(
     }
   }
 
-  #{$_text-inputs-selector},
+  #{$text-inputs-selector},
   textarea {
     padding-inline: 0; // Remove internal padding.
 
@@ -110,7 +107,7 @@ $_text-inputs-selector: string.unquote(
   }
 
   // Expand basic inputs to full-width.
-  #{$_text-inputs-selector},
+  #{$text-inputs-selector},
   textarea,
   select,
   label:not(input + label) {

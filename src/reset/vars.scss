@@ -1,0 +1,5 @@
+@use 'sass:string';
+
+$text-inputs-selector: string.unquote(
+  'input:not([type="button"], [type="submit"], [type="reset"], [type="checkbox"], [type="radio"], [type="color"], [type="file"], [type="range"])'
+);

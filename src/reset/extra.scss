@@ -1,3 +1,5 @@
+@use './vars' as *;
+
 // (Some components based off HTML5 Boilerplate (https://html5boilerplate.com/) © HTML5 Boilerplate MIT)
 @layer reset {
   // Set better defaults.
@@ -88,6 +90,18 @@
   button,
   input:is([type='button'], [type='submit'], [type='reset']) {
     text-wrap: balance;
+  }
+
+  // Reduce line heights for short text and form elements.
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  label,
+  #{$text-inputs-selector},
+  button {
+    line-height: 1.1;
   }
 
   // Remove default italics.
