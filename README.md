@@ -1,3 +1,7 @@
+**This repository has been migrated to Codeberg: [codeberg.org/adamaveray/css-reset](https://codeberg.org/adamaveray/css-reset)**
+
+---
+
 # @averay/css-reset
 
 A somewhat-opinionated SCSS-based CSS reset & normalisation.
