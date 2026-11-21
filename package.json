@@ -35,5 +35,13 @@
     "prettier": "^3.8.1",
     "sass": "^1.97.3",
     "stylelint": "^17.2.0"
+  },
+  "homepage": "https://codeberg.org/adamaveray/css-reset",
+  "bugs": {
+    "url": "https://codeberg.org/adamaveray/css-reset/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://codeberg.org/adamaveray/css-reset.git"
   }
 }
